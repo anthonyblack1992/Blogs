@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/form.css">
+
+    <script defer src="./assets/js/form.js"></script>
+    <script defer src="./assets/js/logic.js"></script>
+    <title>Blog Home</title>
+</head>
+<body>
+    <form id="blogForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="blogTitle">Blog Title:</label>
+        <input type="text" id="blogTitle" name="blogTitle" required>
+        
+        <label for="blogContent">Blog Content:</label>
+        <textarea id="blogContent" name="blogContent" rows="4" required></textarea>
+        
+        <button type="submit">Submit</button>
+
+    
+    </form>
+
+    <!-- <script>
+        document.getElementById('blogform').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const searchQuery = document.getElementById('searchQuery').blogs.html;
+            const format = document.getElementById('format').blogs.html;
+
+            let redirectUrl = `/search-results.html?q=${searchQuery}&format=${format}`;
+            window.location.assign(blogs); // Redirect to the new page
+        });
+    </script> -->
+    <script src="./assets/js/form.js"></script>
+</body>
+</html>

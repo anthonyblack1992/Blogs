@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Posts</h1>
+        <button id="toggleMode">Toggle Light/Dark Mode</button>
+        <button onclick="goBack()">Back</button>
+    </header>
+    <main id="postsContainer"></main>
+    <footer>
+        <a href="https://your-portfolio-link.com">Developer's Portfolio</a>
+    </footer>
+    <script>
+        function loadPosts() {
+            const postsContainer = document.getElementById('postsContainer');
+            const blogPosts = JSON.parse(localStorage.getItem("blogPosts")) || [];
+
+            blogPosts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.innerHTML = `<h2>${post.blogTitle}</h2><p>${post.blogContent}</p><p>By: ${post.username}</p>`;
+                postsContainer.appendChild(postElement);
+            });
+        }
+
+        function goBack() {
+            document.location.replace("/index.html"); // Adjust to your landing page
+        }
+
+        document.getElementById('toggleMode').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        loadPosts();
+    </script>
+    <script src="./assets/js/form.js"></script>
+</body>
+</html>
